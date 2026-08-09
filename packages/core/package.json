@@ -1,6 +1,6 @@
 {
   "name": "astro-icon",
-  "version": "1.1.5",
+  "version": "2.0.0",
   "type": "module",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -8,7 +8,15 @@
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     },
-    "./components": "./components/index.ts"
+    "./components": "./components/index.ts",
+    "./loaders": {
+      "types": "./dist/loaders/index.d.ts",
+      "default": "./dist/loaders/index.js"
+    },
+    "./loaders/live": {
+      "types": "./dist/loaders/live.d.ts",
+      "default": "./dist/loaders/live.js"
+    }
   },
   "files": [
     "components",
@@ -18,7 +26,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
-    "start": "pnpm run dev"
+    "start": "pnpm run dev",
+    "test": "vitest run"
   },
   "author": {
     "name": "Nate Moore",
@@ -46,15 +55,20 @@
     "url": "https://github.com/natemoo-re/astro-icon/issues"
   },
   "homepage": "https://github.com/natemoo-re/astro-icon#readme",
+  "peerDependencies": {
+    "astro": "^5.0.0"
+  },
   "dependencies": {
-    "@iconify/tools": "^4.0.5",
     "@iconify/types": "^2.0.0",
     "@iconify/utils": "^2.1.30"
   },
   "devDependencies": {
+    "@astrojs/node": "^9.0.0",
+    "@iconify-json/svg-spinners": "^1.2.4",
     "@types/node": "^18.18.0",
-    "astro": "^4.0.0",
+    "astro": "^5.18.2",
     "typescript": "^5.0.4",
-    "vite": "^5.0.0"
+    "vite": "^6.4.3",
+    "vitest": "^2.1.9"
   }
 }
