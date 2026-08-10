@@ -18,7 +18,8 @@ interface Props extends HTMLAttributes<"svg"> {
 
 const { name = "", title, desc, ...props } = Astro.props;
 
-const { collection, name: iconName, hasPrefix } = parseIconName(name as string);
+const parsedName = parseIconName(name as string);
+const { collection, name: iconName, hasPrefix } = parsedName;
 
 if (!iconName) {
   throw new AstroIconError(
@@ -50,7 +51,7 @@ if (!entry) {
 }
 
 const { body } = entry.data;
-const { normalizedProps } = renderableIconProps(entry.data, collection, iconName, props);
+const { normalizedProps } = renderableIconProps(entry.data, parsedName, props);
 ---
 
 <svg {...normalizedProps} data-icon={name}>
