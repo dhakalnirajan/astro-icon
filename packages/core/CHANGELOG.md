@@ -1,5 +1,21 @@
 # astro-icon
 
+## 1.1.6
+
+### Patch Changes
+
+- [#288](https://github.com/natemoo-re/astro-icon/pull/288) [`adb18cf0256139a0b4636a2b5f950eb89daf3270`](https://github.com/natemoo-re/astro-icon/commit/adb18cf0256139a0b4636a2b5f950eb89daf3270) Thanks [@stramel](https://github.com/stramel)! - Log a warning instead of silently swallowing errors when the local icon collection fails to load, so failures during dev/build are visible instead of hidden.
+
+- [#287](https://github.com/natemoo-re/astro-icon/pull/287) [`fd5d522ce1b9d12f0dcf85de18c122a7765c09df`](https://github.com/natemoo-re/astro-icon/commit/fd5d522ce1b9d12f0dcf85de18c122a7765c09df) Thanks [@stramel](https://github.com/stramel)! - Fix icon dir watcher so newly added local icons (including files inside subfolders) are picked up without restarting the dev server
+
+- [#282](https://github.com/natemoo-re/astro-icon/pull/282) [`8904693a63a10b2de15edb327eb9632ea36a919a`](https://github.com/natemoo-re/astro-icon/commit/8904693a63a10b2de15edb327eb9632ea36a919a) Thanks [@stramel](https://github.com/stramel)! - Update `@iconify/tools` and `@iconify/utils` to resolve `axios` and `undici` vulnerabilities pulled in transitively.
+
+- [#286](https://github.com/natemoo-re/astro-icon/pull/286) [`6af6fcf1e44b25ed126285952f1b92683b1c38db`](https://github.com/natemoo-re/astro-icon/commit/6af6fcf1e44b25ed126285952f1b92683b1c38db) Thanks [@stramel](https://github.com/stramel)! - Fix `viewBox` being inconsistently present on `<svg>` elements across repeated uses of the same icon
+
+- [#281](https://github.com/natemoo-re/astro-icon/pull/281) [`df57ce68165f396dae6f1802523704f0c068d4c9`](https://github.com/natemoo-re/astro-icon/commit/df57ce68165f396dae6f1802523704f0c068d4c9) Thanks [@stramel](https://github.com/stramel)! - Fix duplicate/incorrect icons rendering in Chromium-based browsers by rewriting internal SVG ids (e.g. gradients, clip paths) to be unique per rendered icon.
+
+- [#284](https://github.com/natemoo-re/astro-icon/pull/284) [`09177dd5b663f878133bb998cf53c016510707be`](https://github.com/natemoo-re/astro-icon/commit/09177dd5b663f878133bb998cf53c016510707be) Thanks [@stramel](https://github.com/stramel)! - Fixes `Astro.request.headers` warning on prerendered pages by keying the internal per-render icon cache off `Astro.locals` instead of `Astro.request`
+
 ## 1.1.5
 
 ### Patch Changes
